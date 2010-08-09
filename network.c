@@ -9,14 +9,14 @@ int network_init(void)
 {
 	printf("initialising network...");
 	
-	#ifdef WIN32
+#	ifdef WIN32
 		// TODO: put in Winsock init crap here
 		printf("FAIL - NO WINSOCK INIT CODE YET\n");
 		return 1;
 		//printf("OK! (next time use a real OS)\n");
-	#else /* not WIN32 */
+#	else /* not WIN32 */
 		printf("OK! (^5 for not using Wind0ze)\n");
-	#endif /* WIN32 */
+#	endif /* WIN32 */
 	
 	
 	return 0;
@@ -27,7 +27,7 @@ int network_init(void)
  */
 void network_exit(void)
 {
-	#ifdef WIN32
+#	ifdef WIN32
 		// TODO: put in Winsock deinit crap here
-	#endif /* WIN32 */
+#	endif /* WIN32 */
 }

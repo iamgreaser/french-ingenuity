@@ -70,9 +70,6 @@ It contains conventions & stuff.
 13. Function prototypes inside a header will have their variable names removed.
 14. WE ARE *ABSOLUTELY #NOT#* going to make *ANY* attempt *WHATSOEVER* for MSVC++ support.
 	Tell those users to use a real compiler.
-
-Stuff which needs to be dealt with.
-* How should we deal with whitespace in a preprocessor variable?
-	Should it preceed or succeed the #?
-* Should we indent code within a preprocessor block?
-* How should we deal with the different ways of marking a struct as packed?
+15. Everything is little-endian where possible.
+16. Whitespace goes AFTER the # in a preprocessor statement.
+17. Packed structs/unions use PACKED_PRE and PACKED_SUF.

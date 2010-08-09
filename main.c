@@ -36,6 +36,4 @@ int main(int argc, char *argv[])
 	
 	return 0;
 }
-#ifdef DRIVER_ALLEGRO
 END_OF_MAIN(); /* Allegro requirement */
-#endif
