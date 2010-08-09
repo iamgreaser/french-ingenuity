@@ -1,0 +1,78 @@
+OK, if you are a developer then you NEED to read this.
+It contains conventions & stuff.
+
+1. ifdef/ifndef/if should have at the end of it a comment like so after the ifdef on the line:
+	/* WHATEVER_VAR_SET */
+	For ifndef, we use /* not WHATEVER_VAR_NOT_SET */
+	For if, we just put in the thing verbatim.
+	For else, we put the converse.
+2. For functions which can return an error, use int, and return 0 if there is no error.
+	If you really only have a generic error, just return -1.
+	If you have a specific error, return the (non-negative) error number.
+3. For functions which don't take any parameters, make sure you have (void) in the parentheses.
+4. On that matter, don't use old-style function declarations.
+	If you don't know what they are, that's good.
+	Stick the types inside the parentheses.
+5. Use // comments inside functions, structs, enums, et cetera.
+	Only use /* */ comments outside of them.
+	Why? So we can just do a /* */ around code inside a function if we need to.
+6. Under all (non-function) circumstances, only use { } if you have more than one line of code.
+7. Use { } like so:
+	if(blah)
+	{
+		// foo
+	} else if(blah2) {
+		// bar
+	} else if(blah3) {
+		// baz
+	} else {
+		// they didn't invent another one
+	}
+	
+	while(blah)
+	{
+		// xaimus
+	}
+	
+	do
+	{
+		// MandraSigma
+	} while(blah);
+	
+	for(i = 0; i < blah; i += athaudia)
+	{
+		// ant1
+	}
+	
+	void play_like_strobe(void)
+	{
+		// TODO make this more evil
+	}
+8. Prefix every function with a brief description in /* */ comments like so:
+	(in this case we just drop "void" parts):
+	
+	/* play_like_strobe():
+	 * Be a pain in the butt.
+	 */
+	
+	/* playing_like_strobe = int check_evilness(int player_idx);
+	 * Are we being horrible enough?
+	 */
+9. CamelCase is AbsolutelyForbidden.
+	We use whatever_this_is_called on our variables_and_functions.
+10. i++ is used on its own, NOT ++i.
+	Only use ++i if you NEED to read the value from it.
+11. With standards against my will, it will be spelt color.
+12. THIS *MUST NOT* RUN IN FULLSCREEN BY DEFAULT.
+	Why? Because otherwise I get the rather charming
+		Out of Range
+	message on my monitor.
+13. Function prototypes inside a header will have their variable names removed.
+14. WE ARE *ABSOLUTELY #NOT#* going to make *ANY* attempt *WHATSOEVER* for MSVC++ support.
+	Tell those users to use a real compiler.
+
+Stuff which needs to be dealt with.
+* How should we deal with whitespace in a preprocessor variable?
+	Should it preceed or succeed the #?
+* Should we indent code within a preprocessor block?
+* How should we deal with the different ways of marking a struct as packed?
