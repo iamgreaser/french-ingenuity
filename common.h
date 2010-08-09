@@ -183,7 +183,10 @@ struct fi_player
 PACKED_PRE struct fi_state_intern
 {
 	uint32_t statetime;
-	uint32_t checksum; // calculated when requested
+	uint32_t check_players;
+	uint32_t check_creeps;
+	uint32_t check_towers;
+	uint32_t check_bullets;
 } PACKED_SUF;
 
 struct fi_state
